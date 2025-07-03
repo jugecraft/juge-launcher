@@ -54,90 +54,121 @@ body, html {
 @keyframes fadeOutIntro {
   to { opacity: 0; visibility: hidden; pointer-events: none; }
 }
+
 @keyframes zoomIn {
   from { transform: scale(0); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
 @keyframes fadeInText {
   to { opacity: 1; }
 }
+
 @keyframes fadeInButton {
   to { opacity: 1; }
 }
 
+.hide-intro {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.discord-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #5865F2;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.discord-btn:hover {
+  background: #4752c4;
+}
+
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(5px);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: #0a0a0a;
+  border-bottom: 1px solid #222;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
+
 .logo img {
-  height: 40px;
+  height: 50px;
+  margin-right: 15px;
 }
+
 .logo-text {
   font-family: 'Orbitron', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #00bfff;
 }
 
 nav a {
-  margin-left: 20px;
+  margin: 0 15px;
+  color: #ccc;
   text-decoration: none;
-  color: white;
   font-weight: bold;
-  transition: color 0.3s ease;
+  font-size: 1rem;
 }
+
 nav a:hover {
   color: #00bfff;
 }
 
 .section {
-  padding: 60px 30px;
-  max-width: 1200px;
-  margin: auto;
+  padding: 60px 40px;
   text-align: center;
 }
+
 .section h2 {
-  font-size: 2.4rem;
+  font-size: 2rem;
   margin-bottom: 40px;
   font-family: 'Orbitron', sans-serif;
   color: #00bfff;
 }
 
 .feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
+
 .feature {
-  background: #0b0f1a;
-  border-radius: 10px;
+  background: #111;
   padding: 20px;
-  transition: transform 0.3s;
+  border-radius: 12px;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+  box-shadow: 0 0 10px #001f33;
 }
-.feature:hover {
-  transform: translateY(-5px);
-}
+
 .feature img {
   width: 100%;
   border-radius: 8px;
-  margin-bottom: 15px;
+  transition: transform 0.3s ease;
 }
-.feature h3 {
-  font-size: 1.2rem;
-  margin: 10px 0;
-  color: #00bfff;
+
+.feature:hover {
+  transform: scale(1.05);
+}
+
+.feature:hover img {
+  transform: scale(1.08);
 }
 
 .version-list {
@@ -145,73 +176,31 @@ nav a:hover {
   padding: 0;
   font-size: 1.1rem;
 }
+
 .version-list li {
-  margin: 15px 0;
+  margin-bottom: 15px;
 }
 
-.discord-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #5865f2;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 8px;
-  text-decoration: none;
+.version-list .proximamente {
+  color: #888;
+  font-style: italic;
+  cursor: not-allowed;
+}
+
+.version-list a {
+  color: #00bfff;
+  text-decoration: underline;
   font-weight: bold;
-  box-shadow: 0 0 12px #5865f2;
-  z-index: 999;
-}
-.discord-btn:hover {
-  background: #4752c4;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-.gallery-grid img {
-  width: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s;
-  cursor: pointer;
-}
-.gallery-grid img:hover {
-  transform: scale(1.05);
-}
-
-.preview {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 3000;
-}
-.preview img {
-  max-width: 90vw;
-  max-height: 90vh;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #00bfff;
-}
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-  z-index: 4000;
+.version-list a:hover {
+  color: #0090dd;
 }
 
 footer {
+  padding: 40px 20px;
+  background-color: #0a0a0a;
   text-align: center;
-  padding: 30px;
-  background: #000;
-  color: #ccc;
-  margin-top: 60px;
+  color: #777;
+  font-size: 0.9rem;
 }
