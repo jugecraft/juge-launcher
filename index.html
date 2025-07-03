@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JugeLauncher</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="intro-screen" id="intro-screen">
+    <img src="juge-launcher-logo.png" alt="JugeLauncher Logo" class="intro-logo">
+    <div class="intro-text">Bienvenido a la nueva era de los Launchers</div>
+    <button class="intro-button" onclick="ocultarIntro()">Empezar</button>
+  </div>
+
+  <audio id="intro-audio" preload="auto">
+    <source src="intro.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div id="particles-js"></div>
+
+  <a class="discord-btn" href="https://discord.gg/tu-servidor" target="_blank">Únete a Discord</a>
+
+  <header>
+    <div class="logo">
+      <img src="juge-launcher-logo.png" alt="Logo" />
+      <div class="logo-text">JugeLauncher</div>
+    </div>
+    <nav>
+      <a href="#caracteristicas">Características</a>
+      <a href="#versiones">Versiones</a>
+      <a href="#galeria">Galería</a>
+      <a href="#soporte">Soporte</a>
+    </nav>
+  </header>
+
+  <div class="section" id="caracteristicas">
+    <h2>Características</h2>
+    <div class="feature-grid">
+      <div class="feature" data-aos="fade-up">
+        <img src="feature-1.png" alt="Interfaz moderna">
+        <h3>Interfaz moderna</h3>
+        <p>Diseño limpio y gamer. Ideal para todos los estilos de jugadores.</p>
+      </div>
+      <div class="feature" data-aos="fade-up">
+        <img src="feature-2.png" alt="Compatibilidad">
+        <h3>Multi-versiones</h3>
+        <p>Compatible con Minecraft 1.7 hasta la más reciente.</p>
+      </div>
+      <div class="feature" data-aos="fade-up">
+        <img src="feature-3.png" alt="Rendimiento">
+        <h3>Rendimiento optimizado</h3>
+        <p>Más rápido y estable que otros launchers tradicionales.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="versiones">
+    <h2>Versiones disponibles</h2>
+    <ul class="version-list">
+      <li>🔹 Windows (.exe) - <a href="#">Descargar</a></li>
+      <li>🔹 MacOS (.dmg) - <a href="#">Descargar</a></li>
+      <li>🔹 Linux (.AppImage) - <a href="#">Descargar</a></li>
+    </ul>
+  </div>
+
+  <div class="section" id="galeria">
+    <h2>Galería</h2>
+    <div class="gallery-grid">
+      <img src="screenshot1.png" alt="Launcher Inicio" onclick="verImagen(this)">
+      <img src="screenshot2.png" alt="Selector de versión" onclick="verImagen(this)">
+      <img src="screenshot3.png" alt="Opciones avanzadas" onclick="verImagen(this)">
+    </div>
+  </div>
+
+  <!-- Vista previa -->
+  <div id="preview" class="preview" onclick="cerrarPreview()">
+    <span class="close-btn">✖</span>
+    <img id="preview-img" src="" alt="Vista previa" />
+  </div>
+
+  <div class="section" id="soporte">
+    <h2>Soporte</h2>
+    <p>¿Tienes dudas o problemas? Únete a nuestro Discord o revisa la <a href="#">documentación oficial</a>.</p>
+  </div>
+
+  <footer>
+    &copy; 2025 JugeLauncher. Todos los derechos reservados.
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    const audio = document.getElementById("intro-audio");
+    const intro = document.getElementById("intro-screen");
+
+    const ocultarIntro = () => {
+      intro.classList.add("hide-intro");
+      setTimeout(() => {
+        intro.remove();
+      }, 1000);
+    };
+
+    function verImagen(img) {
+      const preview = document.getElementById('preview');
+      const previewImg = document.getElementById('preview-img');
+      preview.style.display = 'flex';
+      previewImg.src = img.getAttribute('src');
+      previewImg.alt = img.getAttribute('alt');
+    }
+
+    function cerrarPreview() {
+      const preview = document.getElementById('preview');
+      preview.style.display = 'none';
+      document.getElementById('preview-img').src = '';
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      audio.addEventListener("canplaythrough", () => {
+        document.addEventListener("click", () => {
+          audio.play().catch(err => console.warn("Audio bloqueado:", err));
+        }, { once: true });
+      });
+
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 60 },
+          color: { value: "#00bfff" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5 },
+          size: { value: 3 },
+          move: { enable: true, speed: 1.8 }
+        },
+        interactivity: {
+          events: { onhover: { enable: true, mode: "grab" } },
+          modes: { grab: { distance: 140, line_linked: { opacity: 0.6 } } }
+        },
+        retina_detect: true
+      });
+
+      AOS.init();
+    });
+
+    document.getElementById("preview-img").addEventListener("click", e => e.stopPropagation());
+  </script>
+</body>
+</html>

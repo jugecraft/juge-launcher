@@ -1,0 +1,217 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  background: #010409;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+.intro-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #000;
+  display: flex; align-items: center; justify-content: center; flex-direction: column;
+  z-index: 2000;
+  animation: fadeOutIntro 2s ease-in-out forwards;
+  animation-delay: 5.5s;
+}
+
+.intro-logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  animation: zoomIn 1.2s ease forwards;
+}
+
+.intro-text {
+  font-size: 1.5rem;
+  color: #00bfff;
+  opacity: 0;
+  animation: fadeInText 1.5s ease 1s forwards;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 20px;
+}
+
+.intro-button {
+  padding: 12px 28px;
+  background: #00bfff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeInButton 1s ease 3.2s forwards;
+}
+
+.intro-button:hover {
+  background: #0090dd;
+}
+
+@keyframes fadeOutIntro {
+  to { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+@keyframes zoomIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes fadeInText {
+  to { opacity: 1; }
+}
+@keyframes fadeInButton {
+  to { opacity: 1; }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img {
+  height: 40px;
+}
+.logo-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  color: #00bfff;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: #00bfff;
+}
+
+.section {
+  padding: 60px 30px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+.section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  font-family: 'Orbitron', sans-serif;
+  color: #00bfff;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.feature {
+  background: #0b0f1a;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s;
+}
+.feature:hover {
+  transform: translateY(-5px);
+}
+.feature img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.feature h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #00bfff;
+}
+
+.version-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+}
+.version-list li {
+  margin: 15px 0;
+}
+
+.discord-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #5865f2;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 12px #5865f2;
+  z-index: 999;
+}
+.discord-btn:hover {
+  background: #4752c4;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+.preview {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 3000;
+}
+.preview img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00bfff;
+}
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 4000;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #000;
+  color: #ccc;
+  margin-top: 60px;
+}
