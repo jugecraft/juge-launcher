@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # JugeLauncher Web
 
 ¡Bienvenido a JugeLauncher Web! Este proyecto es la página oficial del launcher, con sistema de registro/inicio de sesión y backend local en Node.js.
@@ -15,8 +14,8 @@
 
 1. **Clona el repositorio:**
    ```
-   git clone https://github.com/tuusuario/juge-launcher-web.git
-   cd juge-launcher-web
+   git clone https://github.com/jugecraft/juge-launcher.git
+   cd juge-launcher
    ```
 2. **Instala las dependencias:**
    ```
@@ -41,7 +40,4 @@
 ¡Pull requests y sugerencias son bienvenidas! Por favor, abre un issue para discutir cambios importantes.
 
 ## Licencia
-[MIT](LICENSE) 
-=======
-# juge-launcher
->>>>>>> 1d0d9ac43869db58cb90d43d3371f041be2e13f2
+[MIT](LICENSE)
