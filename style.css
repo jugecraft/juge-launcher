@@ -7,6 +7,78 @@ body, html {
   overflow-x: hidden;
 }
 
+/* NAVBAR Animación */
+nav a {
+  position: relative;
+  margin: 0 15px;
+  color: #ccc;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #00bfff;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #00bfff;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Botones brillantes */
+.glow-button {
+  background: #00bfff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 8px #00bfff, 0 0 16px #00bfff33;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.glow-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #00bfff, 0 0 24px #00bfff66;
+}
+
+/* Estilo para campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 12px 16px;
+  border: 2px solid #00bfff;
+  background: #0a0a0a;
+  color: white;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 8px #00ffff88;
+}
+
+/* Resto de tu CSS existente se mantiene aquí debajo sin cambios... */
+
 .intro-screen {
   position: fixed;
   top: 0; left: 0;
@@ -116,18 +188,6 @@ header {
   color: #00bfff;
 }
 
-nav a {
-  margin: 0 15px;
-  color: #ccc;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-nav a:hover {
-  color: #00bfff;
-}
-
 .section {
   padding: 60px 40px;
   text-align: center;
@@ -203,4 +263,142 @@ footer {
   text-align: center;
   color: #777;
   font-size: 0.9rem;
+}
+
+/* SECCIÓN: Actualizaciones */
+.updates {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.update {
+  background: #111;
+  padding: 20px;
+  border-left: 4px solid #00bfff;
+  border-radius: 8px;
+}
+
+/* SECCIÓN: Capturas */
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.screenshot {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 0 10px rgba(0,191,255,0.2);
+}
+
+.screenshot:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(0,191,255,0.4);
+}
+
+/* SECCIÓN: Redes sociales */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: #00bfff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid #00bfff;
+  border-radius: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+  background: #00bfff;
+  color: black;
+}
+
+/* SECCIÓN: Otras versiones */
+.versiones-extra {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.versiones-extra ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.versiones-extra li {
+  background: #111;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 3px solid #00bfff;
+}
+
+.social-links i {
+  margin-right: 8px;
+}
+
+/* Íconos */
+.social-links i {
+  margin-right: 8px;
+}
+
+/* Colores personalizados por red */
+.social-links a.youtube {
+  border-color: #FF0000;
+  color: #FF0000;
+}
+.social-links a.youtube:hover {
+  background: #FF0000;
+  color: white;
+}
+
+.social-links a.twitch {
+  border-color: #9146FF;
+  color: #9146FF;
+}
+.social-links a.twitch:hover {
+  background: #9146FF;
+  color: white;
+}
+
+.social-links a.kick {
+  border-color: #53fc18;
+  color: #53fc18;
+}
+.social-links a.kick:hover {
+  background: #53fc18;
+  color: black;
+}
+
+.social-links a.tiktok {
+  border-color: #25F4EE;
+  color: #25F4EE;
+}
+.social-links a.tiktok:hover {
+  background: #25F4EE;
+  color: black;
+}
+
+@keyframes pulse-icon {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2) rotate(5deg); }
+  100% { transform: scale(1); }
+}
+
+.social-links a:hover i {
+  animation: pulse-icon 0.4s ease;
 }
