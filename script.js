@@ -129,6 +129,31 @@ registerForm.addEventListener('submit', async (e) => {
   }
 });
 
+// Mostrar/ocultar versiones anteriores
+function mostrarVersionesAnteriores() {
+  const versionesExtra = document.querySelector('#versiones-anteriores .versiones-extra');
+  const titulo = document.querySelector('#versiones-anteriores h2');
+  if (versionesExtra.style.display === 'block') {
+    versionesExtra.style.display = 'none';
+    titulo.textContent = 'Versiones anteriores ▼';
+  } else {
+    versionesExtra.style.display = 'block';
+    titulo.textContent = 'Versiones anteriores ▲';
+  }
+}
+
+function mostrarAlertaVersionAntigua() {
+  const confirmacion = confirm(
+    "⚠️ ADVERTENCIA: Versión 2.0 BETA obsoleta\n\n" +
+    "Esta es una versión beta antigua con funcionalidades limitadas.\n" +
+    "Recomendamos descargar la versión más actual (JugeLauncher 2.0) para evitar problemas y disfrutar de todas las mejoras.\n\n" +
+    "¿Aún deseas descargar esta versión beta?"
+  );
+  if (confirmacion) {
+    window.location.href = 'https://drive.google.com/file/d/1Z59h_NUP_cTqMA6DBqzkNSQpIJkCuxYP/view?usp=sharing';
+  }
+}
+
 // Mostrar/ocultar otras versiones
 const otrasVersionesTitulo = document.querySelector('#otras-versiones h2');
 const versionesExtra = document.querySelector('.versiones-extra');

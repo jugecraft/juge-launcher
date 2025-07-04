@@ -105,6 +105,15 @@
     </ul>
   </div>
 
+  <div class="section" id="versiones-anteriores">
+    <h2 onclick="mostrarVersionesAnteriores()" style="cursor:pointer;">Versiones anteriores ▼</h2>
+    <div class="versiones-extra" style="display:none;">
+      <ul>
+        <li><strong>2.0 BETA (Julio 2024)</strong> - Versión beta inicial con funcionalidades básicas. <br><a href="#" onclick="mostrarAlertaVersionAntigua()">Descargar</a></li>
+      </ul>
+    </div>
+  </div>
+
   <div class="section" id="redes">
     <h2>Síguenos</h2>
     <div class="social-links">
@@ -137,6 +146,26 @@
     };
 
     function mostrarAlerta() {
+      const confirmacion = confirm(
+        "⚠️ Esta versión BETA de JugeLauncher puede contener errores.\n\nAún se encuentra en desarrollo y podrían experimentarse fallos al iniciar el launcher.\n\n¿Deseas continuar con la descarga?"
+      );
+      if (confirmacion) {
+        window.location.href = 'https://drive.google.com/file/d/197Fvg3v6-rl8BfnVX2kmLYsd2friXAvM/view?usp=drive_link';
+      }
+    }
+
+    function mostrarVersionesAnteriores() {
+      const versionesExtra = document.getElementById("versiones-anteriores").nextElementSibling;
+      if (versionesExtra.style.display === "none") {
+        versionesExtra.style.display = "block";
+        this.textContent = "Versiones anteriores ▲";
+      } else {
+        versionesExtra.style.display = "none";
+        this.textContent = "Versiones anteriores ▼";
+      }
+    }
+
+    function mostrarAlertaVersionAntigua() {
       const confirmacion = confirm(
         "⚠️ Esta versión BETA de JugeLauncher puede contener errores.\n\nAún se encuentra en desarrollo y podrían experimentarse fallos al iniciar el launcher.\n\n¿Deseas continuar con la descarga?"
       );
