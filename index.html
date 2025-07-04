@@ -6,9 +6,10 @@
   <title>JugeLauncher</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
   <div class="intro-screen" id="intro-screen">
@@ -67,6 +68,49 @@
     </ul>
   </div>
 
+  <div class="section" id="actualizaciones">
+    <h2>Actualizaciones</h2>
+    <div class="updates">
+      <div class="update">
+        <h3>v1.1.0 - Mejoras Visuales (03/07/2025)</h3>
+        <p>Se mejoró la interfaz visual, se agregó zoom a las capturas y se optimizó el rendimiento del launcher.</p>
+      </div>
+      <div class="update">
+        <h3>v1.0.0 - Lanzamiento BETA (28/06/2025)</h3>
+        <p>Primera versión disponible para Windows. Fase de prueba abierta al público.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="capturas">
+    <h2>Capturas</h2>
+    <div class="gallery">
+      <img src="screenshot1.png" alt="Captura 1" class="screenshot">
+      <img src="screenshot2.png" alt="Captura 2" class="screenshot">
+      <img src="screenshot3.png" alt="Captura 3" class="screenshot">
+    </div>
+  </div>
+
+  <div class="section" id="redes">
+    <h2>Síguenos</h2>
+    <div class="social-links">
+      <a href="https://www.youtube.com/@Jugecraft" class="youtube" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+      <a href="https://www.twitch.tv/jugecraf" class="twitch" target="_blank"><i class="fab fa-twitch"></i> Twitch</a>
+      <a href="https://kick.com/jugecraft" class="kick" target="_blank"><i class="fas fa-bolt"></i> Kick</a>
+      <a href="https://www.tiktok.com/@jugecraft" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+    </div>
+  </div>
+
+  <div class="section" id="otras-versiones">
+    <h2 onclick="mostrarVersiones()" style="cursor:pointer;">Otras versiones ▼</h2>
+    <div class="versiones-extra" style="display:none;">
+      <ul>
+        <li><strong>v0.9.2 (Alpha)</strong> - Primer prototipo funcional. Sin actualizador. <br><a href="#">Descargar</a></li>
+        <li><strong>v0.8.0 (Experimental)</strong> - Pruebas iniciales con interfaz base. <br><a href="#">Descargar</a></li>
+      </ul>
+    </div>
+  </div>
+
   <div class="section" id="soporte">
     <h2>Soporte</h2>
     <p>¿Tienes problemas o dudas? Únete a nuestro Discord o consulta la <a href="#">documentación oficial</a>.</p>
@@ -93,8 +137,12 @@
       );
       if (confirmacion) {
         window.location.href = 'https://drive.google.com/file/d/197Fvg3v6-rl8BfnVX2kmLYsd2friXAvM/view?usp=drive_link';
- // reemplaza con el archivo real
       }
+    }
+
+    function mostrarVersiones() {
+      const versiones = document.querySelector('.versiones-extra');
+      versiones.style.display = versiones.style.display === 'none' ? 'block' : 'none';
     }
 
     document.addEventListener("DOMContentLoaded", () => {
