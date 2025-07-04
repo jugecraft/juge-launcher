@@ -153,14 +153,3 @@ function mostrarAlertaVersionAntigua() {
     window.location.href = 'https://drive.google.com/file/d/1Z59h_NUP_cTqMA6DBqzkNSQpIJkCuxYP/view?usp=sharing';
   }
 }
-
-// Mostrar/ocultar otras versiones
-const otrasVersionesTitulo = document.querySelector('#otras-versiones h2');
-const versionesExtra = document.querySelector('.versiones-extra');
-otrasVersionesTitulo.addEventListener('click', () => {
-  if (versionesExtra.style.display === 'block') {
-    versionesExtra.style.display = 'none';
-  } else {
-    versionesExtra.style.display = 'block';
-  }
-});

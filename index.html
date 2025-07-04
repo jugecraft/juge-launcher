@@ -155,13 +155,14 @@
     }
 
     function mostrarVersionesAnteriores() {
-      const versionesExtra = document.getElementById("versiones-anteriores").nextElementSibling;
-      if (versionesExtra.style.display === "none") {
-        versionesExtra.style.display = "block";
-        this.textContent = "Versiones anteriores ▲";
+      const versionesExtra = document.querySelector('#versiones-anteriores .versiones-extra');
+      const titulo = document.querySelector('#versiones-anteriores h2');
+      if (versionesExtra.style.display === 'block') {
+        versionesExtra.style.display = 'none';
+        titulo.textContent = 'Versiones anteriores ▼';
       } else {
-        versionesExtra.style.display = "none";
-        this.textContent = "Versiones anteriores ▼";
+        versionesExtra.style.display = 'block';
+        titulo.textContent = 'Versiones anteriores ▲';
       }
     }
 
