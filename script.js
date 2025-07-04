@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { once: true });
   });
 });
+<<<<<<< HEAD
 
 // --- Autenticación ---
 const showLoginBtn = document.getElementById('show-login');
@@ -139,3 +140,5 @@ otrasVersionesTitulo.addEventListener('click', () => {
     versionesExtra.style.display = 'block';
   }
 });
+=======
+>>>>>>> 1d0d9ac43869db58cb90d43d3371f041be2e13f2

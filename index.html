@@ -24,7 +24,11 @@
 
   <div id="particles-js"></div>
 
+<<<<<<< HEAD
   <a class="discord-btn" href="https://discord.gg/CHhssGpbC6" target="_blank">Únete a Discord</a>
+=======
+  <a class="discord-btn" href="https://discord.gg/tu-servidor" target="_blank">Únete a Discord</a>
+>>>>>>> 1d0d9ac43869db58cb90d43d3371f041be2e13f2
 
   <header>
     <div class="logo">
@@ -41,17 +45,29 @@
   <div class="section" id="caracteristicas">
     <h2>Características</h2>
     <div class="feature-grid">
+<<<<<<< HEAD
       <div class="feature" id="feature1">
+=======
+      <div class="feature" data-aos="fade-up">
+>>>>>>> 1d0d9ac43869db58cb90d43d3371f041be2e13f2
         <img src="feature-1.png" alt="Fácil de usar">
         <h3>Interfaz moderna</h3>
         <p>Diseño visual limpio y adaptado a la estética gamer.</p>
       </div>
+<<<<<<< HEAD
       <div class="feature" id="feature2">
+=======
+      <div class="feature" data-aos="fade-up">
+>>>>>>> 1d0d9ac43869db58cb90d43d3371f041be2e13f2
         <img src="feature-2.png" alt="Compatible con versiones">
         <h3>Multi-versiones</h3>
         <p>Compatible con Minecraft desde la 1.7 hasta la última versión.</p>
       </div>
+<<<<<<< HEAD
       <div class="feature" id="feature3">
+=======
+      <div class="feature" data-aos="fade-up">
+>>>>>>> 1d0d9ac43869db58cb90d43d3371f041be2e13f2
         <img src="feature-3.png" alt="Rendimiento optimizado">
         <h3>Rendimiento optimizado</h3>
         <p>Corre más rápido que launchers tradicionales gracias a su núcleo liviano.</p>
@@ -94,7 +110,10 @@
   <div class="section" id="redes">
     <h2>Síguenos</h2>
     <div class="social-links">
+<<<<<<< HEAD
       <a href="https://discord.gg/CHhssGpbC6" class="discord" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+=======
+>>>>>>> 1d0d9ac43869db58cb90d43d3371f041be2e13f2
       <a href="https://www.youtube.com/@Jugecraft" class="youtube" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
       <a href="https://www.twitch.tv/jugecraf" class="twitch" target="_blank"><i class="fab fa-twitch"></i> Twitch</a>
       <a href="https://kick.com/jugecraft" class="kick" target="_blank"><i class="fas fa-bolt"></i> Kick</a>
@@ -114,6 +133,7 @@
 
   <div class="section" id="soporte">
     <h2>Soporte</h2>
+<<<<<<< HEAD
     <p>¿Tienes problemas o dudas? Únete a nuestro Discord o consulta la <a href="DOCUMENTACION.md" target="_blank">documentación oficial</a>.</p>
   </div>
 
@@ -141,12 +161,16 @@
       <h3>¡Bienvenido, <span id="logged-username"></span>!</h3>
       <button id="logout-btn" class="glow-button" style="margin-top:18px;">Cerrar sesión</button>
     </div>
+=======
+    <p>¿Tienes problemas o dudas? Únete a nuestro Discord o consulta la <a href="#">documentación oficial</a>.</p>
+>>>>>>> 1d0d9ac43869db58cb90d43d3371f041be2e13f2
   </div>
 
   <footer>
     &copy; 2025 JugeLauncher. Todos los derechos reservados.
   </footer>
 
+<<<<<<< HEAD
   <script src="script.js"></script>
   <script>
     // Animación AOS solo en móviles
@@ -155,6 +179,58 @@
       document.getElementById('feature2').setAttribute('data-aos', 'fade-up');
       document.getElementById('feature3').setAttribute('data-aos', 'fade-up');
     }
+=======
+  <script>
+    const audio = document.getElementById("intro-audio");
+    const intro = document.getElementById("intro-screen");
+
+    const ocultarIntro = () => {
+      intro.classList.add("hide-intro");
+      setTimeout(() => {
+        intro.remove();
+      }, 1000);
+    };
+
+    function mostrarAlerta() {
+      const confirmacion = confirm(
+        "⚠️ Esta versión BETA de JugeLauncher puede contener errores.\n\nAún se encuentra en desarrollo y podrían experimentarse fallos al iniciar el launcher.\n\n¿Deseas continuar con la descarga?"
+      );
+      if (confirmacion) {
+        window.location.href = 'https://drive.google.com/file/d/197Fvg3v6-rl8BfnVX2kmLYsd2friXAvM/view?usp=drive_link';
+      }
+    }
+
+    function mostrarVersiones() {
+      const versiones = document.querySelector('.versiones-extra');
+      versiones.style.display = versiones.style.display === 'none' ? 'block' : 'none';
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      audio.addEventListener("canplaythrough", () => {
+        document.addEventListener("click", () => {
+          audio.play().catch(err => console.warn("Audio bloqueado:", err));
+        }, { once: true });
+      });
+
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 60 },
+          color: { value: "#00bfff" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5 },
+          size: { value: 3 },
+          move: { enable: true, speed: 1.8 }
+        },
+        interactivity: {
+          events: { onhover: { enable: true, mode: "grab" } },
+          modes: { grab: { distance: 140, line_linked: { opacity: 0.6 } } }
+        },
+        retina_detect: true
+      });
+
+      AOS.init();
+    });
+>>>>>>> 1d0d9ac43869db58cb90d43d3371f041be2e13f2
   </script>
 </body>
 </html>

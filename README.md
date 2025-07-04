@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # JugeLauncher Web
 
 ¡Bienvenido a JugeLauncher Web! Este proyecto es la página oficial del launcher, con sistema de registro/inicio de sesión y backend local en Node.js.
@@ -41,3 +42,6 @@
 
 ## Licencia
 [MIT](LICENSE) 
+=======
+# juge-launcher
+>>>>>>> 1d0d9ac43869db58cb90d43d3371f041be2e13f2

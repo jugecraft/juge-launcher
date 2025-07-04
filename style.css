@@ -402,6 +402,7 @@ footer {
 .social-links a:hover i {
   animation: pulse-icon 0.4s ease;
 }
+<<<<<<< HEAD
 
 /* --- Estilos de autenticación --- */
 .auth-container {
@@ -475,3 +476,5 @@ footer {
 .auth-message.success {
   color: #00ffae;
 }
+=======
+>>>>>>> 1d0d9ac43869db58cb90d43d3371f041be2e13f2
