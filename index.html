@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JugeLauncher</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -24,110 +25,277 @@
 
   <div id="particles-js"></div>
 
-  <a class="discord-btn" href="https://discord.gg/CHhssGpbC6" target="_blank">Únete a Discord</a>
+  <div id="main-content" style="display:none;">
+    <a class="discord-btn" href="https://discord.gg/CHhssGpbC6" target="_blank">Únete a Discord</a>
 
-  <header>
-    <div class="logo">
-      <img src="juge-launcher-logo.png" alt="JugeLauncher Logo" />
-      <div class="logo-text">JugeLauncher</div>
-    </div>
-    <nav>
-      <a href="#caracteristicas">Características</a>
-      <a href="#versiones">Versiones</a>
-      <a href="#soporte">Soporte</a>
-    </nav>
-  </header>
-
-  <div class="section" id="caracteristicas">
-    <h2>Características</h2>
-    <div class="feature-grid">
-      <div class="feature" data-aos="fade-up">
-        <img src="feature-1.png" alt="Fácil de usar">
-        <h3>Interfaz moderna</h3>
-        <p>Diseño visual limpio y adaptado a la estética gamer.</p>
+    <header>
+      <div class="logo">
+        <img src="juge-launcher-logo.png" alt="JugeLauncher Logo" />
+        <div class="logo-text">JugeLauncher</div>
       </div>
-      <div class="feature" data-aos="fade-up">
-        <img src="feature-2.png" alt="Compatible con versiones">
-        <h3>Multi-versiones</h3>
-        <p>Compatible con Minecraft desde la 1.7 hasta la última versión.</p>
-      </div>
-      <div class="feature" data-aos="fade-up">
-        <img src="feature-3.png" alt="Rendimiento optimizado">
-        <h3>Rendimiento optimizado</h3>
-        <p>Corre más rápido que launchers tradicionales gracias a su núcleo liviano.</p>
+      <nav>
+        <a href="#caracteristicas">Características</a>
+        <a href="#versiones">Versiones</a>
+        <a href="#version-3-beta">3.0 BETA</a>
+        <a href="#reportar-bug">Reportar Bug</a>
+        <a href="#soporte">Soporte</a>
+      </nav>
+    </header>
+
+    <div class="section" id="caracteristicas">
+      <h2>Características</h2>
+      <div class="feature-grid">
+        <div class="feature" data-aos="fade-up">
+          <img src="feature-1.png" alt="Fácil de usar">
+          <h3>Interfaz moderna</h3>
+          <p>Diseño visual limpio y adaptado a la estética gamer.</p>
+        </div>
+        <div class="feature" data-aos="fade-up">
+          <img src="feature-2.png" alt="Compatible con versiones">
+          <h3>Multi-versiones</h3>
+          <p>Compatible con Minecraft desde la 1.7 hasta la última versión.</p>
+        </div>
+        <div class="feature" data-aos="fade-up">
+          <img src="feature-3.png" alt="Rendimiento optimizado">
+          <h3>Rendimiento optimizado</h3>
+          <p>Corre más rápido que launchers tradicionales gracias a su núcleo liviano.</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="section" id="versiones">
-    <h2>Versiones disponibles</h2>
-    <ul class="version-list">
-      <li>🔹 Windows (.exe) - <a href="#" onclick="mostrarAlerta()">Descargar</a></li>
-      <li>🔹 MacOS (.dmg) - <span class="proximamente">Próximamente</span></li>
-      <li>🔹 Linux (.AppImage) - <span class="proximamente">Próximamente</span></li>
-    </ul>
-  </div>
-
-  <div class="section" id="capturas">
-    <h2>Capturas</h2>
-    <div class="gallery">
-      <img src="screenshot1.png" alt="Captura 1" class="screenshot">
-      <img src="screenshot2.png" alt="Captura 2" class="screenshot">
-      <img src="screenshot3.png" alt="Captura 3" class="screenshot">
-    </div>
-  </div>
-
-  <div class="section" id="actualizacion">
-    <h2>JugeLauncher 2.0 – Actualización de Julio 2024</h2>
-    <h3>Novedades y mejoras:</h3>
-    <ul style="text-align:left; max-width:700px; margin:0 auto 30px auto;">
-      <li><b>Java embebido automático:</b> El launcher ahora descarga y usa automáticamente la versión de Java recomendada para cada versión de Minecraft (Java 8, 17 o 21), igual que el launcher oficial. ¡Ya no necesitas instalar Java manualmente!</li>
-      <li><b>Compatibilidad total:</b> Soporte para todas las versiones de Minecraft, desde 1.8.9 hasta la más reciente, incluyendo Forge y OptiFine.</li>
-      <li><b>Ventana moderna y sin bordes:</b> El launcher ahora tiene una ventana sin marco nativo, con esquinas redondeadas y fondo moderno, para una experiencia visual premium.</li>
-      <li><b>Herramientas avanzadas:</b> Nueva sección colapsable con utilidades como verificación de archivos, limpieza de logs y diagnóstico, accesible solo cuando lo necesitas.</li>
-      <li><b>Selección de Java avanzada:</b> Opción para usuarios avanzados de elegir manualmente la ruta de Java, pero con modo automático por defecto.</li>
-      <li><b>Logs en vivo y copia rápida:</b> Consola de logs en tiempo real, con botón para copiar y limpiar fácilmente.</li>
-      <li><b>Corrección de errores:</b>
+    <div class="section" id="versiones">
+      <h2>Versiones disponibles</h2>
+      <div class="version-card">
+        <div class="version-header">
+          <h3>�� JugeLauncher 3.0 BETA</h3>
+          <span class="version-badge">NUEVA VERSIÓN</span>
+        </div>
+        <div class="version-info">
+          <p><strong>Estado:</strong> <span class="status-complete">✅ FUNCIONAL Y LISTO PARA USO</span></p>
+          <p><strong>Tamaño:</strong> 73MB (Instalador) / 156MB (Aplicación)</p>
+          <p><strong>Compatibilidad:</strong> Windows 10/11</p>
+          <p><strong>Dependencias:</strong> 373 paquetes npm</p>
+        </div>
+        <div class="version-features">
+          <h4>🎮 Características Principales:</h4>
+          <ul>
+            <li>✅ Gestión automática de versiones (Vanilla, Forge, OptiFine)</li>
+            <li>✅ Descarga automática de Java embebido (8, 11, 17)</li>
+            <li>✅ Gestión inteligente de librerías y natives</li>
+            <li>✅ Lanzamiento optimizado con configuración de memoria</li>
+            <li>✅ Autenticación offline funcional</li>
+            <li>✅ Interfaz moderna con logs en tiempo real</li>
+          </ul>
+        </div>
+        <div class="version-download">
+          <a href="https://drive.google.com/file/d/1mD3c09duBNRqgyUUAjouVE29djdZp218/view?usp=sharing" target="_blank" class="download-button">
+            <i class="fas fa-download"></i> Descargar Windows (.exe)
+          </a>
+          <small>Versión 3.0.0 BETA - Última actualización</small>
+        </div>
+      </div>
+      
+      <div class="version-list">
+        <h4>Otras plataformas:</h4>
         <ul>
-          <li>Se corrigió el error de incompatibilidad de Java en versiones antiguas (1.14.2 y menores).</li>
-          <li>Mejor manejo de librerías LWJGL y natives.</li>
-          <li>Mejoras en la detección y reparación de archivos corruptos.</li>
-          <li>Mejoras visuales y de usabilidad en toda la interfaz.</li>
+          <li>🔹 MacOS (.dmg) - <span class="proximamente">Próximamente</span></li>
+          <li>🔹 Linux (.AppImage) - <span class="proximamente">Próximamente</span></li>
         </ul>
-      </li>
-    </ul>
-    <h3>¿Por qué elegir JugeLauncher 2.0?</h3>
-    <ul style="text-align:left; max-width:700px; margin:0 auto;">
-      <li>No requiere Java instalado.</li>
-      <li>Compatible con todas las versiones y mods.</li>
-      <li>Interfaz moderna, rápida y personalizable.</li>
-      <li>Herramientas avanzadas para usuarios expertos.</li>
-    </ul>
-  </div>
-
-  <div class="section" id="versiones-anteriores">
-    <h2 onclick="mostrarVersionesAnteriores()" style="cursor:pointer;">Versiones anteriores ▼</h2>
-    <div class="versiones-extra" style="display:none;">
-      <ul>
-        <li><strong>2.0 BETA (Julio 2024)</strong> - Versión beta inicial con funcionalidades básicas. <br><a href="#" onclick="mostrarAlertaVersionAntigua()">Descargar</a></li>
-      </ul>
+      </div>
     </div>
-  </div>
 
-  <div class="section" id="redes">
-    <h2>Síguenos</h2>
-    <div class="social-links">
-      <a href="https://discord.gg/CHhssGpbC6" class="discord" target="_blank"><i class="fab fa-discord"></i> Discord</a>
-      <a href="https://www.youtube.com/@Jugecraft" class="youtube" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-      <a href="https://www.twitch.tv/jugecraf" class="twitch" target="_blank"><i class="fab fa-twitch"></i> Twitch</a>
-      <a href="https://kick.com/jugecraft" class="kick" target="_blank"><i class="fas fa-bolt"></i> Kick</a>
-      <a href="https://www.tiktok.com/@jugecraft" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+    <div class="section" id="capturas">
+      <h2>Capturas</h2>
+      <div class="carousel-container">
+        <div class="carousel" id="carousel">
+          <img src="screenshot1.png" alt="Captura 1" class="carousel-image active">
+          <img src="screenshot2.png" alt="Captura 2" class="carousel-image">
+          <img src="screenshot3.png" alt="Captura 3" class="carousel-image">
+          <img src="screenshot4.png" alt="Captura 4" class="carousel-image">
+          <button class="carousel-btn prev" id="prevBtn" aria-label="Anterior">&#10094;</button>
+          <button class="carousel-btn next" id="nextBtn" aria-label="Siguiente">&#10095;</button>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
     </div>
-  </div>
 
-  <div class="section" id="soporte">
-    <h2>Soporte</h2>
-    <p>¿Tienes problemas o dudas? Únete a nuestro <a href="https://discord.gg/CHhssGpbC6" target="_blank">Discord</a> o consulta la <a href="DOCUMENTACION.md" target="_blank">documentación oficial</a>.</p>
+    <div class="section" id="version-3-beta">
+      <header class="text-center mb-12">
+        <h2 class="title-font text-4xl md:text-5xl font-black text-white uppercase tracking-widest">
+          <span class="text-cyan-400" style="text-shadow: 0 0 10px #00aaff;">Launcher</span> Patch Notes
+        </h2>
+        <p class="mt-2 text-cyan-400">Version Log: 3.0.0 // Status: <span class="text-green-400 font-bold animate-pulse">OPERATIONAL</span></p>
+      </header>
+
+      <div id="accordion-container" class="space-y-6 max-w-4xl mx-auto">
+        <!-- Funcionalidades Implementadas -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="title-container">
+              <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <h3 class="title-font">Funcionalidades Implementadas</h3>
+            </div>
+            <div class="accordion-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <div class="grid md:grid-cols-2 gap-x-8 gap-y-6 content-list">
+              <ul>
+                <li class="font-bold text-white mb-2">✅ Gestión de Versiones</li>
+                <li>Detección automática</li>
+                <li>Soporte de herencia</li>
+                <li>Validación de JSON</li>
+              </ul>
+              <ul>
+                <li class="font-bold text-white mb-2">✅ Sistema de Java</li>
+                <li>Descarga automática JRE</li>
+                <li>Soporte multi-versión</li>
+                <li>Configuración de rutas</li>
+              </ul>
+              <ul>
+                <li class="font-bold text-white mb-2">✅ Gestión de Librerías</li>
+                <li>Descarga de dependencias</li>
+                <li>Manejo especial LWJGL</li>
+                <li>Extracción de natives</li>
+              </ul>
+              <ul>
+                <li class="font-bold text-white mb-2">✅ Lanzamiento de Minecraft</li>
+                <li>Construcción de classpath</li>
+                <li>Procesamiento de args</li>
+                <li>Optimización de memoria</li>
+              </ul>
+              <ul class="md:col-span-2">
+                 <li class="font-bold text-white mb-2">✅ Interfaz y Autenticación</li>
+                 <li>Login, gestor de versiones y logs.</li>
+                 <li>Modo offline y perfiles personalizables.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Estado y Hoja de Ruta -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+             <div class="title-container">
+                <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 10.5a8 8 0 1 1 16 0c0 5-8 11.5-8 11.5s-8-6.5-8-11.5Z"></path><path d="M9.5 10.5a2.5 2.5 0 1 1 5 0 2.5 2.5 0 0 1-5 0Z"></path></svg>
+                <h3 class="title-font">Estado y Hoja de Ruta</h3>
+            </div>
+            <div class="accordion-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <ul class="space-y-3 content-list">
+              <li><span class="font-bold text-white">Estado:</span> ✅ FUNCIONAL Y LISTO</li>
+              <li class="mt-6-important"><span class="font-bold text-white">🔄 En Desarrollo</span></li>
+              <li>Autenticación Microsoft (código listo)</li>
+              <li>Gestión de perfiles (básico implementado)</li>
+              <li class="mt-6-important"><span class="font-bold text-white">🎯 Próximas Mejoras</span></li>
+              <li>Gestión de mods</li>
+              <li>Backups de configuración</li>
+              <li>Actualizaciones automáticas (OTA)</li>
+              <li>Soporte Multiplataforma (macOS/Linux)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Detalles Técnicos -->
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="title-container">
+              <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"></path><path d="M18 20V4"></path><path d="M6 20V16"></path></svg>
+              <h3 class="title-font">Estadísticas y Datos Técnicos</h3>
+            </div>
+            <div class="accordion-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+          </div>
+          <div class="accordion-content">
+            <div class="grid md:grid-cols-2 gap-8 content-list">
+              <ul>
+                <li class="font-bold text-white mb-2">📊 Estadísticas</li>
+                <li><strong>Versión:</strong> 3.0.0</li>
+                <li><strong>Líneas de código:</strong> ~2,000+</li>
+                <li><strong>Instalador:</strong> 73MB</li>
+                <li><strong>Aplicación:</strong> 156MB</li>
+                <li><strong>Dependencias:</strong> 373 paquetes npm</li>
+                <li><strong>Compatibilidad:</strong> Windows 10/11</li>
+              </ul>
+              <ul>
+                <li class="font-bold text-white mb-2">🎮 Características Técnicas</li>
+                <li><strong>Soporte:</strong> Vanilla, Forge, OptiFine</li>
+                <li><strong>Optimización:</strong> Heap, Natives, Classpath</li>
+                <li><strong>Seguridad:</strong> Context Isolation</li>
+                <li><strong>Estabilidad:</strong> Error handling & File validation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="section" id="versiones-anteriores">
+      <h2 onclick="mostrarVersionesAnteriores()" style="cursor:pointer;">Versiones anteriores ▼</h2>
+      <div class="versiones-extra" style="display:none;">
+        <ul>
+          <li><strong>2.0 BETA (Julio 2024)</strong> - Versión beta inicial con funcionalidades básicas. <br><a href="#" onclick="mostrarAlertaVersionAntigua()">Descargar</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="redes">
+      <h2>Síguenos</h2>
+      <div class="social-links">
+        <a href="https://discord.gg/CHhssGpbC6" class="discord" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+        <a href="https://www.youtube.com/@Jugecraft" class="youtube" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.twitch.tv/jugecraf" class="twitch" target="_blank"><i class="fab fa-twitch"></i> Twitch</a>
+        <a href="https://kick.com/jugecraft" class="kick" target="_blank"><i class="fas fa-bolt"></i> Kick</a>
+        <a href="https://www.tiktok.com/@jugecraft" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+      </div>
+    </div>
+
+    <div class="section" id="soporte">
+      <h2>Soporte</h2>
+      <p>¿Tienes problemas o dudas? Únete a nuestro <a href="https://discord.gg/CHhssGpbC6" target="_blank">Discord</a> o consulta la <a href="DOCUMENTACION.md" target="_blank">documentación oficial</a>.</p>
+    </div>
+
+    <div class="section" id="reportar-bug">
+      <h2>Reportar Bug</h2>
+      <p>¿Encontraste un error en JugeLauncher? ¡Ayúdanos a mejorarlo!</p>
+      
+      <form id="bug-form" class="bug-form">
+        <div class="form-group">
+          <input type="text" id="bug-nombre" placeholder="Tu nombre" required />
+          <input type="email" id="bug-email" placeholder="Tu correo electrónico" required />
+        </div>
+        
+        <div class="form-group">
+          <select id="bug-version" required>
+            <option value="">Selecciona la versión</option>
+            <option value="3.0">JugeLauncher 3.0</option>
+            <option value="2.0">JugeLauncher 2.0</option>
+            <option value="2.0 BETA">JugeLauncher 2.0 BETA</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <textarea id="bug-descripcion" placeholder="Describe el error o problema que encontraste..." rows="5" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="bug-archivos">Adjuntar imágenes o videos (opcional):</label>
+          <input type="file" id="bug-archivos" multiple accept="image/*,video/*" />
+          <small>Puedes subir hasta 3 archivos. Formatos: JPG, PNG, MP4, AVI</small>
+        </div>
+        
+        <button type="submit" class="glow-button">Enviar Reporte</button>
+        
+        <div class="bug-message" id="bug-message"></div>
+      </form>
+    </div>
   </div>
 
   <footer>
@@ -137,11 +305,13 @@
   <script>
     const audio = document.getElementById("intro-audio");
     const intro = document.getElementById("intro-screen");
+    const mainContent = document.getElementById("main-content");
 
     const ocultarIntro = () => {
       intro.classList.add("hide-intro");
       setTimeout(() => {
         intro.remove();
+        mainContent.style.display = "block";
       }, 1000);
     };
 
@@ -199,7 +369,64 @@
       });
 
       AOS.init();
+
+      // JavaScript para el acordeón
+      const accordionContainer = document.getElementById('accordion-container');
+      
+      if (accordionContainer) {
+        // Abrir el primer acordeón por defecto
+        const firstItem = accordionContainer.querySelector('.accordion-item');
+        if(firstItem) {
+          firstItem.classList.add('open');
+        }
+
+        accordionContainer.addEventListener('click', function (event) {
+          const header = event.target.closest('.accordion-header');
+          if (!header) return;
+
+          const item = header.parentElement;
+          
+          item.classList.toggle('open');
+        });
+      }
     });
+
+    // Carrusel de capturas
+    const carousel = document.getElementById('carousel');
+    const images = carousel ? carousel.querySelectorAll('.carousel-image') : [];
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('carouselDots');
+    let current = 0;
+
+    function showImage(idx) {
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === idx);
+      });
+      if (dotsContainer) {
+        dotsContainer.querySelectorAll('button').forEach((dot, i) => {
+          dot.classList.toggle('active', i === idx);
+        });
+      }
+    }
+
+    function goTo(idx) {
+      current = (idx + images.length) % images.length;
+      showImage(current);
+    }
+
+    if (dotsContainer && images.length > 0) {
+      dotsContainer.innerHTML = '';
+      images.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    if (prevBtn) prevBtn.onclick = () => goTo(current - 1);
+    if (nextBtn) nextBtn.onclick = () => goTo(current + 1);
+    showImage(current);
   </script>
 </body>
 </html>

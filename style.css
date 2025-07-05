@@ -1,3 +1,23 @@
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+body > *:not(#particles-js) {
+  position: relative;
+  z-index: 1;
+}
+
+header, .section, footer, .discord-btn {
+  position: relative;
+  z-index: 2;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -82,12 +102,12 @@ input[type="password"]:focus {
 .intro-screen {
   position: fixed;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100vw; height: 100vh;
   background: #000;
   display: flex; align-items: center; justify-content: center; flex-direction: column;
-  z-index: 2000;
-  animation: fadeOutIntro 2s ease-in-out forwards;
-  animation-delay: 5.5s;
+  z-index: 3000;
+  animation: none;
+  transition: opacity 1s;
 }
 
 .intro-logo {
@@ -142,7 +162,8 @@ input[type="password"]:focus {
 
 .hide-intro {
   opacity: 0;
-  transition: opacity 0.8s ease;
+  pointer-events: none;
+  transition: opacity 1s;
 }
 
 .discord-btn {
@@ -401,4 +422,751 @@ footer {
 
 .social-links a:hover i {
   animation: pulse-icon 0.4s ease;
+}
+
+/* --- Estilos para formulario de reporte de bugs --- */
+.bug-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #111927;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 16px #00bfff33;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #00bfff;
+  background: #181f2a;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 8px #00ffff88;
+}
+
+.form-group input[type="file"] {
+  padding: 8px;
+  border: 2px dashed #00bfff;
+  background: transparent;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #00bfff;
+  font-weight: bold;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 5px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.bug-message {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  min-height: 20px;
+}
+
+.bug-message.success {
+  background: #00ffae33;
+  color: #00ffae;
+  border: 1px solid #00ffae;
+}
+
+.bug-message.error {
+  background: #ff525233;
+  color: #ff5252;
+  border: 1px solid #ff5252;
+}
+
+.bug-message.loading {
+  background: #00bfff33;
+  color: #00bfff;
+  border: 1px solid #00bfff;
+}
+
+/* Estilos para la sección de versión 3.0 BETA */
+.version-card {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  border: 2px solid #00bfff;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.version-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.version-card:hover::before {
+  left: 100%;
+}
+
+.version-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #00bfff;
+}
+
+.version-header h3 {
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.version-badge {
+  background: linear-gradient(45deg, #00bfff, #00ffff);
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.version-info {
+  margin-bottom: 25px;
+}
+
+.version-info p {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.status-complete {
+  color: #00ff00;
+  font-weight: bold;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+.version-features {
+  margin-bottom: 25px;
+}
+
+.version-features h4 {
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.version-features ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.version-features li {
+  margin: 8px 0;
+  padding: 8px 0;
+  border-left: 3px solid #00bfff;
+  padding-left: 15px;
+  background: rgba(0, 191, 255, 0.1);
+  border-radius: 0 5px 5px 0;
+}
+
+.version-download {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 2px solid #00bfff;
+}
+
+.download-button {
+  display: inline-block;
+  background: linear-gradient(45deg, #00bfff, #00ffff);
+  color: #000;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+}
+
+.download-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(0, 191, 255, 0.8);
+  color: #000;
+}
+
+.download-button i {
+  margin-right: 8px;
+}
+
+.version-download small {
+  display: block;
+  margin-top: 10px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Estilos para la sección completa de versión 3.0 */
+.version-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.overview-card {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  border: 1px solid #00bfff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
+}
+
+.overview-card h3 {
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.overview-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.overview-card li {
+  margin: 10px 0;
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+}
+
+.overview-card li:last-child {
+  border-bottom: none;
+}
+
+.features-section {
+  margin-bottom: 40px;
+}
+
+.features-section h3 {
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.feature-category {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  border: 1px solid #00bfff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+}
+
+.feature-category h4 {
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.feature-category ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.feature-category li {
+  margin: 8px 0;
+  padding: 5px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.feature-category li::before {
+  content: '•';
+  color: #00bfff;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.technical-section {
+  margin-bottom: 40px;
+}
+
+.technical-section h3 {
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.tech-card {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  border: 1px solid #00bfff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+}
+
+.tech-card h4 {
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.tech-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.tech-card li {
+  margin: 8px 0;
+  padding: 5px 0;
+  border-bottom: 1px solid #333;
+}
+
+.tech-card li:last-child {
+  border-bottom: none;
+}
+
+.development-section {
+  margin-bottom: 40px;
+}
+
+.development-section h3 {
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.dev-features, .future-features {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  border: 1px solid #ffa500;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.2);
+}
+
+.dev-features ul, .future-features ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.dev-features li, .future-features li {
+  margin: 8px 0;
+  padding: 5px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.dev-features li::before, .future-features li::before {
+  content: '🔄';
+  position: absolute;
+  left: 0;
+}
+
+.future-features li::before {
+  content: '🎯';
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .version-overview {
+    grid-template-columns: 1fr;
+  }
+  
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .version-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .version-card {
+    padding: 20px;
+    margin: 10px;
+  }
+}
+
+/* Estilos para el nuevo diseño de acordeón */
+.title-font {
+  font-family: 'Exo 2', sans-serif;
+}
+
+.accordion-item {
+  background-color: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid #00aaff;
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.2), inset 0 0 10px rgba(0, 170, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.accordion-item:hover {
+   box-shadow: 0 0 25px rgba(0, 170, 255, 0.4), inset 0 0 15px rgba(0, 170, 255, 0.2);
+   border-color: #99ddff;
+}
+
+.accordion-header {
+  cursor: pointer;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-header .title-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.accordion-header h3 {
+  color: #00aaff;
+  text-shadow: 0 0 5px #00aaff;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.accordion-header .section-icon {
+  width: 24px;
+  height: 24px;
+  color: #00aaff;
+}
+
+.accordion-icon {
+  color: #00aaff;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease-in-out, padding 0.6s ease-in-out;
+  padding: 0 1.5rem;
+}
+
+.accordion-item.open .accordion-content {
+  max-height: 1200px;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.accordion-item.open .accordion-icon {
+  transform: rotate(135deg);
+}
+
+.content-list li {
+  padding: 0.35rem 0 0.35rem 1rem;
+  border-left: 2px solid rgba(0, 170, 255, 0.3);
+  transition: all 0.2s ease;
+  list-style: none;
+}
+
+.content-list li:hover {
+  background-color: rgba(0, 170, 255, 0.05);
+  border-left-color: #00aaff;
+}
+
+.content-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content-list ul li {
+  margin: 0.5rem 0;
+}
+
+/* Estilos para el header del acordeón */
+#version-3-beta header {
+  margin-bottom: 3rem;
+}
+
+#version-3-beta .title-font {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: white;
+}
+
+#version-3-beta .text-cyan-400 {
+  color: #00aaff;
+  text-shadow: 0 0 10px #00aaff;
+}
+
+#version-3-beta .text-green-400 {
+  color: #4ade80;
+}
+
+#version-3-beta .animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Estilos para el grid y espaciado */
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+}
+
+.md\:grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.gap-x-8 {
+  column-gap: 2rem;
+}
+
+.gap-y-6 {
+  row-gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.md\:col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+.space-y-3 > * + * {
+  margin-top: 0.75rem;
+}
+
+/* Estilos para texto y utilidades */
+.font-bold {
+  font-weight: 700;
+}
+
+.text-white {
+  color: white;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+/* Clase para margen superior importante */
+.mt-6-important {
+  margin-top: 1.5rem !important;
+}
+
+/* Responsive para el acordeón */
+@media (max-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .md\:col-span-2 {
+    grid-column: span 1 / span 1;
+  }
+  
+  #version-3-beta .title-font {
+    font-size: 2rem;
+  }
+  
+  .accordion-header {
+    padding: 1rem;
+  }
+  
+  .accordion-content {
+    padding: 0 1rem;
+  }
+  
+  .accordion-item.open .accordion-content {
+    padding: 0 1rem 1rem 1rem;
+  }
+}
+
+/* Carrusel de capturas */
+.carousel-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding: 30px 0 10px 0;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.25);
+  box-shadow: 0 0 24px #00bfff22;
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s, transform 0.5s;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.carousel-image.active {
+  opacity: 1;
+  transform: scale(1.05);
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,191,255,0.7);
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  z-index: 3;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 10px #00bfff55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn:hover {
+  background: #00bfff;
+  box-shadow: 0 0 20px #00bfff99;
+}
+
+.carousel-btn.prev {
+  left: 18px;
+}
+
+.carousel-btn.next {
+  right: 18px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+  gap: 10px;
+}
+
+.carousel-dots button {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: none;
+  background: #00bfff55;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.carousel-dots button.active {
+  background: #00bfff;
+  transform: scale(1.2);
+}
+
+@media (max-width: 900px) {
+  .carousel {
+    height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel {
+    height: 180px;
+  }
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
+  }
 }

@@ -153,3 +153,75 @@ function mostrarAlertaVersionAntigua() {
     window.location.href = 'https://drive.google.com/file/d/1Z59h_NUP_cTqMA6DBqzkNSQpIJkCuxYP/view?usp=sharing';
   }
 }
+
+// Funcionalidad para reporte de bugs
+document.getElementById('bug-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const nombre = document.getElementById('bug-nombre').value;
+  const email = document.getElementById('bug-email').value;
+  const version = document.getElementById('bug-version').value;
+  const descripcion = document.getElementById('bug-descripcion').value;
+  const archivos = document.getElementById('bug-archivos').files;
+  const messageDiv = document.getElementById('bug-message');
+  
+  // Validación
+  if (!nombre || !email || !version || !descripcion) {
+    showBugMessage('Por favor completa todos los campos obligatorios.', 'error');
+    return;
+  }
+  
+  // Validar email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    showBugMessage('Por favor ingresa un correo electrónico válido.', 'error');
+    return;
+  }
+  
+  // Mostrar estado de carga
+  showBugMessage('Enviando reporte...', 'loading');
+  
+  try {
+    const formData = new FormData();
+    formData.append('nombre', nombre);
+    formData.append('email', email);
+    formData.append('version', version);
+    formData.append('descripcion', descripcion);
+    
+    // Agregar archivos si existen
+    for (let i = 0; i < archivos.length; i++) {
+      formData.append('archivos', archivos[i]);
+    }
+    
+    const response = await fetch('/api/reportar-bug', {
+      method: 'POST',
+      body: formData
+    });
+    
+    const data = await response.json();
+    
+    if (response.ok) {
+      showBugMessage(data.mensaje, 'success');
+      document.getElementById('bug-form').reset();
+    } else {
+      showBugMessage(data.error || 'Error al enviar el reporte.', 'error');
+    }
+    
+  } catch (error) {
+    console.error('Error:', error);
+    showBugMessage('Error de conexión. Inténtalo de nuevo.', 'error');
+  }
+});
+
+function showBugMessage(message, type) {
+  const messageDiv = document.getElementById('bug-message');
+  messageDiv.textContent = message;
+  messageDiv.className = `bug-message ${type}`;
+  
+  if (type === 'success') {
+    setTimeout(() => {
+      messageDiv.textContent = '';
+      messageDiv.className = 'bug-message';
+    }, 5000);
+  }
+}
